@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('channel-test', require('./components/ChannelTest.vue'));
 
 const app = new Vue({
     el: '#app'

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Events\OrderShipped;
 
 class PageController extends Controller
 {
@@ -14,7 +13,6 @@ class PageController extends Controller
 
     public function channel()
     {
-        event(new OrderShipped());
         return view('page.channel');
     }
 }

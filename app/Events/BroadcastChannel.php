@@ -10,18 +10,19 @@ use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
-class OrderShipped
+class BroadcastChannel implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
+    public $message;
 
     /**
      * Create a new event instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($news_message)
     {
-        //
+        $this->message = $news_message;
     }
 
     /**
@@ -31,6 +32,6 @@ class OrderShipped
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-test');
+        return new Channel('channel-test');
     }
 }
