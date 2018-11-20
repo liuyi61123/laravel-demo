@@ -15,4 +15,9 @@ class PageController extends Controller
     {
         return view('page.channel');
     }
+
+    public function auth()
+    {
+        return view('page.auth');
+    }
 }
